@@ -1,0 +1,109 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build: board",
+      "type": "shell",
+      "command": "${config:zephyr.prevCommand} west build -b ${config:zephyr.boardName} ${config:zephyr.applicationPath}",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Build application for the specified board using J-Link."
+    },
+    {
+      "label": "flash: board",
+      "type": "shell",
+      "command": "${config:zephyr.prevCommand} west flash",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": [],
+      "detail": "Flash the built application onto the board using J-Link."
+    },
+    {
+      "label": "build: qemu_cortex_m3",
+      "type": "shell",
+      "command": "${config:zephyr.prevCommand} west build -b qemu_cortex_m3 ${config:zephyr.applicationPath}",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Build application for QEMU Cortex-M3 architecture."
+    },
+    {
+      "label": "run: qemu_cortex_m3",
+      "type": "shell",
+      "command": "${config:zephyr.prevCommand} west build -t run",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": [],
+      "detail": "Run the application in QEMU for Cortex-M3 architecture."
+    },
+    {
+      "label": "build: qemu_x86",
+      "type": "shell",
+      "command": "${config:zephyr.prevCommand} west build -b qemu_x86 ${config:zephyr.applicationPath}",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Build application for QEMU x86 architecture."
+    },
+    {
+      "label": "run: qemu_x86",
+      "type": "shell",
+      "command": "${config:zephyr.prevCommand} west build -t run",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": [],
+      "detail": "Run the application in QEMU for x86 architecture."
+    },
+    {
+      "label": "build: native_sim",
+      "type": "shell",
+      "command": "${config:zephyr.prevCommand} west build -p -b native_sim ${config:zephyr.applicationPath} && chmod +x ${workspaceFolder}/build/zephyr/zephyr.exe",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Build application for BabbleSim (native_posix) simulation."
+    },
+    {
+      "label": "run: native_sim",
+      "type": "shell",
+      "command": "python3",
+      "args": [
+        "${workspaceFolder}/.vscode/scripts/launchSim.py",
+        "${input:numberOfNodes}"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": [],
+      "detail": "Run the application in BabbleSim (native_sim) simulation.",
+      "presentation": {
+          "echo": true,
+          "reveal": "always"
+      }
+    },
+  ],
+  "inputs": [
+      {
+          "id": "numberOfNodes",
+          "type": "promptString",
+          "description": "Enter the number of nodes",
+          "default": "5"
+      }
+  ]
+}  

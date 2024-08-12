@@ -1,0 +1,216 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "J-Link Board: Build",
+      "type": "debugpy",
+      "program": "${workspaceFolder}/.vscode/scripts/empty.py",
+      "request": "launch",
+      "preLaunchTask": "build: board",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "J-Link Board: Build and Debug",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "jlink",
+      "device": "${config:zephyr.boardName}", // Replace with your target device if needed
+      "interface": "swd",
+      "runToEntryPoint": "main",
+      "executable": "${config:zephyr.projectDirectory}/build/board/zephyr/zephyr.elf",
+      "cwd": "${config:zephyr.projectDirectory}",
+      "preLaunchTask": "build: board"
+    },
+    {
+      "name": "J-Link Board: Debug",
+      "type": "cortex-debug",
+      "request": "launch",
+      "servertype": "jlink",
+      "device": "${config:zephyr.boardName}", // Replace with your target device if needed
+      "interface": "swd",
+      "runToEntryPoint": "main",
+      "executable": "${config:zephyr.projectDirectory}/build/board/zephyr/zephyr.elf",
+      "cwd": "${config:zephyr.projectDirectory}"
+    },
+    {
+      "name": "J-Link Board: Flash",
+      "type": "debugpy",
+      "program": "${workspaceFolder}/.vscode/scripts/empty.py",
+      "request": "launch",
+      "preLaunchTask": "flash: board",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "QEMU (Cortex-M3): Build",
+      "type": "debugpy",
+      "program": "${workspaceFolder}/.vscode/scripts/empty.py",
+      "request": "launch",
+      "preLaunchTask": "build: qemu_cortex_m3",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "QEMU (Cortex-M3): Build and Debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${config:zephyr.projectDirectory}/build/qemu_cortex_m3/zephyr/zephyr.elf",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${config:zephyr.projectDirectory}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "${config:zephyr.projectDirectory}/.venv/bin/arm-none-eabi-gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build: qemu_cortex_m3"
+    },
+    {
+      "name": "QEMU (Cortex-M3): Debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${config:zephyr.projectDirectory}/build/qemu_cortex_m3/zephyr/zephyr.elf",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${config:zephyr.projectDirectory}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "${config:zephyr.projectDirectory}/.venv/bin/arm-none-eabi-gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "QEMU (Cortex-M3): Run",
+      "type": "debugpy",
+      "program": "${workspaceFolder}/.vscode/scripts/empty.py",
+      "request": "launch",
+      "preLaunchTask": "run: qemu_cortex_m3",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "QEMU (x86): Build",
+      "type": "debugpy",
+      "program": "${workspaceFolder}/.vscode/scripts/empty.py",
+      "request": "launch",
+      "preLaunchTask": "build: qemu_x86",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "QEMU (x86): Build and Debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${config:zephyr.projectDirectory}/build/qemu_x86/zephyr/zephyr.elf",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${config:zephyr.projectDirectory}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "${config:zephyr.projectDirectory}/.venv/bin/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build: qemu_x86"
+    },
+    {
+      "name": "QEMU (x86): Debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${config:zephyr.projectDirectory}/build/qemu_x86/zephyr/zephyr.elf",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${config:zephyr.projectDirectory}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "${config:zephyr.projectDirectory}/.venv/bin/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "QEMU (x86): Run",
+      "type": "debugpy",
+      "program": "${workspaceFolder}/.vscode/scripts/empty.py",
+      "request": "launch",
+      "preLaunchTask": "run: qemu_x86",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Native_sim: Build",
+      "type": "debugpy",
+      "program": "${workspaceFolder}/.vscode/scripts/empty.py",
+      "request": "launch",
+      "preLaunchTask": "build: native_sim",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Native_sim: Build and Debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/zephyr/zephyr.exe",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "build:native_sim"
+    },
+    {
+      "name": "Native_sim: Debug",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/zephyr/zephyr.exe",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "/usr/bin/gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    },
+    {
+      "name": "Native_sim: Run",
+      "type": "debugpy",
+      "program": "${workspaceFolder}/.vscode/scripts/empty.py",
+      "request": "launch",
+      "preLaunchTask": "run: native_sim",
+      "console": "integratedTerminal"
+    }
+  
+  ]
+}
