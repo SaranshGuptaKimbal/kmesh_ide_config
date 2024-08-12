@@ -97,7 +97,10 @@
                 "${workspaceFolder}/../modules/hal/silabs/gecko/Device/SiliconLabs/EFM32PG12B/Source",
                 "${workspaceFolder}/../modules/hal/silabs/gecko/Device/SiliconLabs/EFM32PG12B/Source/GCC",
                 "${workspaceFolder}/../modules/hal/silabs/gecko/Device/SiliconLabs/EFM32PG12B/Source/IAR",
-                "${workspaceFolder}/../modules/hal/silabs/gecko/Device/SiliconLabs/EFM32PG12B/Source/ARM"
+                "${workspaceFolder}/../modules/hal/silabs/gecko/Device/SiliconLabs/EFM32PG12B/Source/ARM",
+                "${workspaceFolder}/../zephyr/scripts/native_simulator/native/src/include",
+                "${workspaceFolder}/../zephyr/lib/libc/arcmwdt/include",
+                "${workspaceFolder}/../zephyr/scripts/native_simulator/common/src"
             ],
             "defines": [
                 "__ZEPHYR__",

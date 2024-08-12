@@ -2,4 +2,5 @@
     "zephyr.applicationPath": "${workspaceFolder}/applications/test",
     "zephyr.board": "your board",
     "zephyr.prevCommand": ". ../.venv/bin/activate && ",
+    "cmake.configureOnOpen": false,
 }
