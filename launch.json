@@ -181,7 +181,7 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build:native_sim"
+      "preLaunchTask": "build: native_sim"
     },
     {
       "name": "Native_sim: Debug",
