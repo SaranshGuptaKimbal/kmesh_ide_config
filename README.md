@@ -18,7 +18,7 @@ The file .vscode/settings.json contains variables for the configuration.
  - zephyr.board: Specifies board name. Irrelevant if you are using qemu or native_sim
  - zephyr.prevCommand: If you are using the python virtual environment as shown in the zephyr Getting Started guide, leave this variable as is. If not, set the variable to "";
 
-# Recommended exttensions
+# Recommended extensions
  - C/C++ Extension Pack
  - kconfig
  - MemoryView
