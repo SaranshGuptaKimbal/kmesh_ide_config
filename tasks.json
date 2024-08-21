@@ -4,7 +4,7 @@
     {
       "label": "build: board",
       "type": "shell",
-      "command": "${config:zephyr.prevCommand} west build -b ${config:zephyr.boardName} ${config:zephyr.applicationPath}",
+      "command": "${config:zephyr.prevCommand} west build -b ${config:zephyr.boardName} ${config:zephyr.applicationPath} --pristine",
       "group": {
         "kind": "build",
         "isDefault": true

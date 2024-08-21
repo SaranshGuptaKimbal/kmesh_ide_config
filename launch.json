@@ -14,11 +14,11 @@
       "type": "cortex-debug",
       "request": "launch",
       "servertype": "jlink",
-      "device": "${config:zephyr.boardName}", // Replace with your target device if needed
+      "device": "${config:zephyr.deviceName}", // Replace with your target device if needed
       "interface": "swd",
       "runToEntryPoint": "main",
-      "executable": "${config:zephyr.projectDirectory}/build/board/zephyr/zephyr.elf",
-      "cwd": "${config:zephyr.projectDirectory}",
+      "executable": "${workspaceFolder}/build/zephyr/zephyr.elf",
+      "cwd": "${workspaceFolder}",
       "preLaunchTask": "build: board"
     },
     {
@@ -26,11 +26,11 @@
       "type": "cortex-debug",
       "request": "launch",
       "servertype": "jlink",
-      "device": "${config:zephyr.boardName}", // Replace with your target device if needed
+      "device": "${config:zephyr.deviceName}", // Replace with your target device if needed
       "interface": "swd",
       "runToEntryPoint": "main",
-      "executable": "${config:zephyr.projectDirectory}/build/board/zephyr/zephyr.elf",
-      "cwd": "${config:zephyr.projectDirectory}"
+      "executable": "${workspaceFolder}/build/zephyr/zephyr.elf",
+      "cwd": "${workspaceFolder}"
     },
     {
       "name": "J-Link Board: Flash",

@@ -5,6 +5,7 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/build/zephyr/include/generated/zephyr/syscalls",
+                "${workspaceFolder}/build/zephyr/include/generated/zephyr",
                 "${workspaceFolder}/build/zephyr/include/generated/**",
                 "${workspaceFolder}/build/zephyr/include/**",
                 "${workspaceFolder}/../zephyr/include",
@@ -113,6 +114,7 @@
                 "path": [
                     "${workspaceFolder}/**",
                     "${workspaceFolder}/build/zephyr/include/generated/zephyr/syscalls",
+                    "${workspaceFolder}/build/zephyr/include/generated/zephyr",
                     "${workspaceFolder}/build/zephyr/include/generated/**",
                     "${workspaceFolder}/build/zephyr/include/**",
                     "${workspaceFolder}/../zephyr/include/**",
