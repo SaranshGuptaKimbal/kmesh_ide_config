@@ -1,8 +1,17 @@
 {
-    "zephyr.applicationPath": "${workspaceFolder}/../zephyr/samples/basic/blinky",
+    "zephyr.applicationPath": "${workspaceFolder}/applications/phy_perf",
     "zephyr.boardName": "fg23_kmp",
     "zephyr.deviceName": "EFR32FG23BXXXF512",
     "zephyr.prevCommand": ". ../.venv/bin/activate && ",
     "cmake.configureOnOpen": false,
-    "cortex-debug.gdbPath": "${workspaceFolder}/../../zephyr-sdk-0.16.8/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb"
+    "cortex-debug.gdbPath": "${workspaceFolder}/../../zephyr-sdk-0.16.8/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb",
+    "files.associations": {
+        "kernel.h": "c",
+        "log.h": "c",
+        "*.tcc": "c",
+        "random": "c",
+        "producerconsumer.h": "c",
+        "kclapi.h": "c",
+        "sl_device_init_hfxo.h": "c"
+    }
 }
